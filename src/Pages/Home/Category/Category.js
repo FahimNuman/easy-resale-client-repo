@@ -3,14 +3,15 @@ import BookingCategory from '../../Booking/BookingCategory';
 
 const Category = () => {
 
-    const [bookings,setBookings] = useState({})
+    const [bookings,setBookings] = useState([])
 
     useEffect(()=>{
         fetch(`http://localhost:5000/bookings`)
         .then(res=>res.json())
             .then(data => setBookings(data))
-    },[])
 
+    },[])
+// console.log(bookings);
 
     return (
         <div>
@@ -27,9 +28,9 @@ const Category = () => {
                             grid grid-cols-3 gap-4'>
                                
                                
-                                    {
-                                        bookings.map(booking=><BookingCategory key={booking._id} booking={booking} ></BookingCategory>)
-                                    }
+                                   {
+                                    bookings.map(book =><BookingCategory key={book._id} book={book} ></BookingCategory>)
+                                   }
                                
                                 
                             </div>

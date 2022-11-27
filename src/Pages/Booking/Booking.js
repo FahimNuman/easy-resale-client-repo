@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import AbailableBooking from './AbailableBooking';
+import BookingAppointment from './BookingAppointment';
+
 
 const Booking = () => {
+    const [selectedDate, setSelectedDate] = useState(new Date())
     return (
         <div className='
         mx-5'>
-            this is booking
+            <BookingAppointment selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+            <AbailableBooking selectedDate={selectedDate} />
+           
         </div>
     );
 };
