@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import BookingCategory from '../../Booking/BookingCategory';
+import Categorybutton from '../Categorybutton/Categorybutton';
+
 
 const Category = () => {
+    const [categories,setCategories] = useState([])
 
-    const [bookings,setBookings] = useState([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/categories`)
+            .then(res => res.json())
+            .then(data => setCategories(data))
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/bookings`)
-        .then(res=>res.json())
-            .then(data => setBookings(data))
-
-    },[])
-// console.log(bookings);
+    }, [])
 
     return (
         <div>
-           
+
             <div className='border border-sky-500' >
                 <div className=" hero min-h-screen bg-base-200">
                     <div className="hero-content text-center">
@@ -23,16 +22,16 @@ const Category = () => {
                             <h1 className="text-5xl font-bold">Browse TV(items) by category</h1>
                             <p className="py-6">Get the product directly in hand and have the facility of fastest delivery. In the case of buying and selling products, you get the benefit of seeing and understanding , that is, you can see any product with your own hands and then buy and sell it. ad!
 
-                                 </p>
+                            </p>
                             <div className='
                             grid grid-cols-3 gap-4'>
-                               
-                               
-                                   {
-                                    bookings.map(book =><BookingCategory key={book._id} book={book} ></BookingCategory>)
-                                   }
-                               
-                                
+
+
+                                {
+                                  categories.map(category=><Categorybutton key={category._id} category={category}></Categorybutton>)
+                                }
+
+
                             </div>
                         </div>
                     </div>
@@ -95,12 +94,13 @@ const Category = () => {
                         </div>
                     </div>
                 </section>
-                
+
             </div>
-           
-            
+
+
         </div>
     );
 };
+
 
 export default Category;

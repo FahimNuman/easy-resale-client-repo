@@ -38,20 +38,20 @@ const Footer = () => {
                                     </Link>
                                 </li>
                                 <li className="text-slate-300 text-sm">
-                                    <Link to={"/all-ads/1"} className="inline-block py-1">
+                                    <Link to={"/showproduct"} className="inline-block py-1">
                                         <BsFillArrowRightCircleFill className="inline text-[#FBBF24] mb-1 mr-2" />
                                         All Ads
                                     </Link>
                                 </li>
 
                                 <li className="text-slate-300 text-sm">
-                                    <Link to={"/profile"} className="inline-block py-1">
+                                    <Link to={"/blog"} className="inline-block py-1">
                                         <BsFillArrowRightCircleFill className="inline text-[#FBBF24] mb-1 mr-2" />
-                                        Post Your Ads
+                                        Blog
                                     </Link>
                                 </li>
                                 <li className="text-slate-300 text-sm">
-                                    <Link to={"/profile"} className="inline-block py-1">
+                                    <Link to={"/login"} className="inline-block py-1">
                                         <BsFillArrowRightCircleFill className="inline text-[#FBBF24] mb-1 mr-2" />
                                         My Account
                                     </Link>
@@ -102,8 +102,8 @@ const Footer = () => {
                 </div>
             </div>
             <hr />
-            
-            
+
+
         </div>
     );
 };
