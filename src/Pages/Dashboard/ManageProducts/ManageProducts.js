@@ -12,6 +12,7 @@ const ManageProducts = () => {
     }
 
 
+    
     const { data: products, isLoading, refetch } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
